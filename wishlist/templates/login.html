@@ -1,10 +1,48 @@
 {% extends 'base.html' %}
 
 {% block meta %}
-<title>Login</title>
+<title>Login | Wishlist</title>
 {% endblock meta %}
 
 {% block content %}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work+Sans">
+<style>
+    * {
+      font-family: "Work Sans";
+      text-align:center;
+      vertical-align: middle;
+      color: #2e3c4d;
+    }
+    td, input {
+        text-align: left; 
+    }
+    form {
+      border-radius:0.5em; 
+      box-shadow: 0px 0px 7px rgba(128, 128, 128, 0.211);   
+      background-color: rgba(178, 178, 178, 0.211);   
+      margin: auto;
+      width: 270px;
+      padding: 1em;
+      border-radius: 1em;
+    }
+    h1, a, a.visited {
+      font-family: "Work Sans";
+      color:#413f76;
+    }
+    body {
+        background-image: url(https://img.freepik.com/free-vector/gradient-blur-pink-blue-abstract-background_53876-117324.jpg);
+    }
+
+</style>
+
+
+<nav class="navbar navbar-expand-lg navbar-color">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">{{ nama }}</a>
+      <button class="btn btn-outline-success"><a class="link-dark" href="{% url 'wishlist:login' %}">Login</a></button>
+    </div>
+</nav>
+</br></br>
 
 <div class = "login">
 
@@ -25,7 +63,7 @@
 
             <tr>
                 <td></td>
-                <td><input class="btn login_btn" type="submit" value="Login"></td>
+                <td></br><input class="btn login_btn" type="submit" value="Login" style="background-color:rgba(255, 255, 255, 0.264)"></td>
             </tr>
         </table>
     </form>
@@ -37,8 +75,8 @@
             {% endfor %}
         </ul>
     {% endif %}     
-        
-    Belum mempunyai akun? <a href="{% url 'wishlist:register' %}">Buat Akun</a>
+    </br>
+    <p>Belum mempunyai akun?  <a href="{% url 'wishlist:register' %}">Buat Akun</a></p>
 
 </div>
 

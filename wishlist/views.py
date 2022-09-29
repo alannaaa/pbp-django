@@ -42,7 +42,10 @@ def register(request):
             messages.success(request, 'Akun telah berhasil dibuat!')
             return redirect('wishlist:login')
     
-    context = {'form':form}
+    context = {
+        'form': form,
+        'nama': 'Alanna',
+        }
     return render(request, 'register.html', context)
 
 def login_user(request):
@@ -57,7 +60,7 @@ def login_user(request):
             return response
         else:
             messages.info(request, 'Username atau Password salah!')
-    context = {}
+    context = {'nama': 'Alanna',}
     return render(request, 'login.html', context)
 
 def logout_user(request):

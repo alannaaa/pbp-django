@@ -1,22 +1,60 @@
 {% extends 'base.html' %}
 
 {% block meta %}
-<title>Registrasi Akun</title>
+<title>Registrasi Akun | Wishlist</title>
 {% endblock meta %}
 
-{% block content %}  
+{% block content %} 
+<!doctype html> 
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work+Sans">
+
+<style>
+    * {
+      font-family: "Work Sans";
+      text-align: left; 
+      vertical-align:text-top;
+    }
+    h1 {
+      text-align: center;
+      color:#413f76;
+    }
+    th {
+      font-size: large;
+    }
+    body {
+        background-image: url(https://img.freepik.com/free-vector/gradient-blur-pink-blue-abstract-background_53876-117324.jpg);
+    }  
+    form {
+        margin:auto; 
+        width: 800px; 
+        padding: 1em; 
+        border-radius: 1em; 
+        font-size: small; 
+        background-color: rgba(204, 204, 204, 0.277); 
+        box-shadow: 0px 0px 20px rgba(128, 128, 128, 0.211); 
+    }
+</style>
+
+
+<nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">{{ nama }}</a>
+      <button class="btn btn-outline-success"><a class="link-dark" href="{% url 'wishlist:login' %}">Login</a></button>
+    </div>  
+</nav>
+</br></br>
 
 <div class = "login">
     
     <h1>Formulir Registrasi</h1>  
-
-        <form method="POST" >  
+    </br>
+        <form method="POST">  
             {% csrf_token %}  
             <table>  
                 {{ form.as_table }}  
                 <tr>  
                     <td></td>
-                    <td><input type="submit" name="submit" value="Daftar"/></td>  
+                    <td></br><input class="btn login_btn" type="submit" value="Daftar" style="background-color:rgba(255, 255, 255, 0.8)"></td>
                 </tr>  
             </table>  
         </form>
